@@ -46,7 +46,6 @@ const App = () => {
       setFadeOut(true); 
     }, 2500);
 
-    // Default search term on load
     searchMovies('Avengers');
 
     return () => clearTimeout(timer); 
