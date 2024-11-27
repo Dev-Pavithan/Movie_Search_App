@@ -5,8 +5,8 @@ import movie from './movie.jpeg';
 import './App.css';
 import SearchIcon from './search.svg';
 
-const API_URL = process.env.REACT_APP_MOVIES_API_URL;
-console.log('API URL:', API_URL); 
+// Directly using the API URL with the API key.
+const API_URL = 'http://www.omdbapi.com/?apikey=56100d74';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -16,6 +16,7 @@ const App = () => {
 
   const searchMovies = async (title) => {
     try {
+      // Construct the full URL with the search term.
       const fullURL = `${API_URL}&s=${title}`;
       console.log(`Fetching movies from: ${fullURL}`);
 
@@ -45,6 +46,7 @@ const App = () => {
       setFadeOut(true); 
     }, 2500);
 
+    // Default search term on load
     searchMovies('Avengers');
 
     return () => clearTimeout(timer); 
