@@ -5,8 +5,8 @@ import movie from './movie.jpeg';
 import './App.css';
 import SearchIcon from './search.svg';
 
-// Directly using the API URL with the API key.
-const API_URL = 'http://www.omdbapi.com/?apikey=56100d74';
+// Updated API URL to use HTTPS
+const API_URL = 'https://www.omdbapi.com/?apikey=56100d74';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -46,6 +46,7 @@ const App = () => {
       setFadeOut(true); 
     }, 2500);
 
+    // Default search term on load
     searchMovies('Avengers');
 
     return () => clearTimeout(timer); 
